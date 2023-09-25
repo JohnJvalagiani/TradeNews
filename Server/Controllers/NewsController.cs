@@ -28,7 +28,7 @@ namespace Server.Controllers
             var result = await _service.GetnewsByInstrument(instrument);
             return Ok(result);
         }
-        [HttpGet("Get all news")]
+        [HttpGet("Get all news contains text")]
         public async Task<IActionResult> GetnewsContainsText(string instrument)
         {
             var result = await _service.GetnewsContainsText(instrument);
