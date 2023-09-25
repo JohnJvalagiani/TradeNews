@@ -67,3 +67,21 @@ function NewsEventListener(event):
 
 # Conclusion:
 # For real-time user notifications and scalability, the event-based approach is preferred over cron jobs.
+
+
+## Estimated Time Breakdown
+
+
+## Cron Job-Based Subscription
+
+- Setting up a basic cron job for periodic news checking and notification: 1-2 hours.
+- Implementing news checking logic, user subscription management, and notification sending: 15-30 hours.
+- Testing and debugging: 10 hours.
+- **Total estimated time: 25-45 hours.**
+
+## Event-Based Subscription
+
+- Setting up an event-driven architecture with a messaging system or event bus: 10-15 hours.
+- Implementing event listeners, news checking logic, user subscription management, and notification sending: 30-40 hours.
+- Testing and debugging: 10-20 hours.
+- **Total estimated time: 65-80 hours.**

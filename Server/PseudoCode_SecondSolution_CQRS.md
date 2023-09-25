@@ -84,3 +84,28 @@ public class NewsController : ControllerBase
 // - Query Optimization: Optimize MongoDB for specific queries
 // - Development Ease: MediatR simplifies command and query handling
 
+
+## Estimated Time Breakdown
+
+1. **Define Command and Query DTOs**
+   - CreateNewsCommand: 1-2 hours
+   - GetNewsQuery: 1-2 hours
+
+2. **Define Command and Query Handlers**
+   - CreateNewsCommandHandler:
+     - Implementing command handling logic: 8-16 hours
+   - GetNewsQueryHandler:
+     - Implementing query handling logic: 8-16 hours
+
+3. **Configure Dependency Injection (DI)**
+   - Setting up DI container: 2-4 hours
+
+4. **Define API Controllers**
+   - NewsController:
+     - Define API endpoints and integrate with MediatR: 6-12 hours
+
+5. **Configure Routing, Authentication, and Middleware (e.g., in Startup.cs)**
+   - Setting up routing and authentication: 4-8 hours
+
+
+**Total Estimated Time: 32-45 hours**
