@@ -1,5 +1,7 @@
 ﻿using Application.Models;
 using Application.Persistence;
+using Application.Persistence.Entities;
+using AutoMapper;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System;
@@ -13,27 +15,21 @@ namespace Application.Services
 {
     public class NewsService : INewsService
     {
-        private readonly AppDbContext _dbContext;
-        private readonly string _baseAPIUrl = "https://api.polygon.io/v2/reference/";
-        private readonly ApiKeyConfiguration _apiKeyConfig;
-        private readonly IHttpClientFactory _httpClientFactory;
-        public NewsService(IOptions<ApiKeyConfiguration> apiKeyConfig, IHttpClientFactory httpClientFactory)
+        private readonly ArticlesRepoService _articlesRepoService;
+        private readonly IMapper _mapper;
+        public NewsService(IMapper mapper, ArticlesRepoService articlesRepoService)
         {
-                this._apiKeyConfig = apiKeyConfig.Value;
-                _httpClientFactory = httpClientFactory;
+            _mapper= mapper;
+            _articlesRepoService = articlesRepoService;
         }
-        public async Task<NewsResponse> GetAllNews()
+        public async Task<List<Article>> GetAllNews()
         {
-            using var httpClient = new HttpClient();
-            var requestUrl = $"{_baseAPIUrl}news?order=desc&sort=published_utc&apiKey={_apiKeyConfig.ApiKey}";
-            var response = await httpClient.GetAsync(requestUrl);
-            var responseBody = await response.Content.ReadAsStringAsync();
-            var movieList = JsonConvert.DeserializeObject<NewsResponse>(responseBody);
-            return movieList;
+           return await _articlesRepoService.GetAll();
         }
-        //public async Task SaveAricles(List<NewsResponse> news)
-        //{
-        //    _dbContext.AddRangeAsync(news);
-        //}
+
+        public Task<List<Article>> GetNewsfromDay(int days)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

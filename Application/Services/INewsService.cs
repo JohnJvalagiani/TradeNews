@@ -1,4 +1,5 @@
 ﻿using Application.Models;
+using Application.Persistence.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,9 @@ namespace Application.Services
 {
     public interface INewsService
     {
-        public Task<NewsResponse> GetAllNews();
-        //public Task<NewsResponse> GetNewsBy();
+        public Task<List<Article>> GetAllNews();
+        
+         public Task<List<Article>> GetNewsfromDay(int days);
         //public Task<NewsResponse> GetAllNews();
     }
 }

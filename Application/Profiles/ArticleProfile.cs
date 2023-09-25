@@ -15,7 +15,7 @@ namespace Application.Profiles
     {
         public ArticleProfile()
         {
-            CreateMap<NewsResponse, Article>().ReverseMap();
+            CreateMap<Result, Article>().ReverseMap();
         }
     }
 }
