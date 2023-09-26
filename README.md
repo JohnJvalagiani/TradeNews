@@ -45,7 +45,7 @@
 
 **Description:** A public endpoint allows users to retrieve the latest news for conversion tools, including the top latest news for five different instruments.
 
-
+##### Components
 
 ### Server
 
