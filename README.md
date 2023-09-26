@@ -3,38 +3,48 @@
 
 # User Story: News Aggregation and Web API
 
-## Acceptance Criteria
+# Trading News System
 
-1. **Consume Trading News:**
+## User Stories
 
-   - The system should automatically fetch trading news from any available provider (e.g., https://polygon.io/) every 1 hour.
-   - For each news item, enrich the data with additional information, such as a ticker chart.
-   - Save the enriched news data in a storage solution for future retrieval.
+### 1. Consume Trading News
 
-2. **Web API for Clients:**
+**Description:** The system automatically fetches trading news every 1 hour from the [polygon.io](https://polygon.io/) provider.
 
-   - Create a Web API that any client can access.
-   - Implement authorization to secure the API endpoints.
+### 2. Enrich and Store News Data
 
-3. **Get All News:**
+**Description:** For each news item retrieved:
+- a. The system enriches the data with additional information, such as a ticker chart.
+- b. The enriched news data is then saved in a storage solution for future retrieval.
 
-   - Authorized users should be able to retrieve all trading news.
+### 3. Create Web API for Clients
 
-4. **Get News from Today – {n} Days:**
+**Description:** The system provides a Web API accessible to any client. This API includes the following functionalities:
 
-   - Authorized users should be able to retrieve trading news from today and up to a specified number of days in the past.
+### 4. Get All News
 
-5. **Get News by Instrument Name with News Limit:**
+**Description:** Authorized users can retrieve all trading news through this API.
 
-   - Authorized users should be able to retrieve trading news for a specific instrument name, including an optional news limit (default limit should be 10).
+### 5. Get News from Today – {n} Days
 
-6. **Get News that Contains {Text}:**
+**Description:** Authorized users can retrieve trading news from today and up to a specified number of days in the past.
 
-   - Authorized users should be able to search for trading news that contains specific text.
+### 6. Get News by Instrument Name with News Limit
 
-7. **User Subscription:**
+**Description:** Authorized users can retrieve trading news for a specific instrument name, including an optional news limit (default limit should be 10).
 
-   - Authorized users should have the ability to subscribe to receive notifications or updates related to trading news.
+### 7. Get News that Contains {Text}
+
+**Description:** Authorized users can search for trading news that contains specific text.
+
+### 8. User Subscription
+
+**Description:** Authorized users have the ability to subscribe to receive notifications or updates related to trading news.
+
+### 9. Public Endpoint: Get Latest News
+
+**Description:** A public endpoint allows users to retrieve the latest news for conversion tools, including the top latest news for five different instruments.
+
 
 
 ### Server
